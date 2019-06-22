@@ -20,7 +20,7 @@ public class Conexion {
     Connection conexion = null;
     Statement sentencia = null;
     
-    public String rutaDB;
+    public String rutaDB; 
     
     public Conexion(){
         rutaDB = "C:\\Users\\The Law\\Documents\\NetBeansProjects\\GestionEstudiantil\\Gestion_Estudiantil.sqlite";
