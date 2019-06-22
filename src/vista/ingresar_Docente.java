@@ -5,7 +5,7 @@
  */
 package vista;
 
-import javaapplication12.Panel_Admin;
+import vista.Panel_Admin;
 
 /**
  *
