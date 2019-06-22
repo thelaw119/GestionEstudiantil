@@ -8,6 +8,7 @@ import java.util.*;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import vista.ingresar_Docente;
+import vista.Ingresar_Alumno;
 /**
  *
  * @author kimbe
@@ -52,7 +53,6 @@ Thread h1;
 }
                 
 
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,11 +72,11 @@ Thread h1;
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         txtbuscaDocente = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnDocenteNuevo = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnAlumnoNuevo = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -158,10 +158,10 @@ Thread h1;
 
         txtbuscaDocente.setText("jTextField1");
 
-        jButton2.setText("Ingresar nuevo Docente");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnDocenteNuevo.setText("Ingresar nuevo Docente");
+        btnDocenteNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnDocenteNuevoActionPerformed(evt);
             }
         });
 
@@ -178,7 +178,7 @@ Thread h1;
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(btnDocenteNuevo)
                         .addGap(104, 104, 104))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -189,7 +189,7 @@ Thread h1;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnDocenteNuevo))
                 .addGap(138, 138, 138))
         );
 
@@ -198,8 +198,18 @@ Thread h1;
         jTextField2.setText("jTextField2");
 
         jButton3.setText("Buscar Alumno");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Ingresar nuevo Alumno");
+        btnAlumnoNuevo.setText("Ingresar nuevo Alumno");
+        btnAlumnoNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlumnoNuevoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -214,7 +224,7 @@ Thread h1;
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(btnAlumnoNuevo)
                         .addGap(89, 89, 89))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -225,7 +235,7 @@ Thread h1;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnAlumnoNuevo))
                 .addGap(150, 150, 150))
         );
 
@@ -455,14 +465,27 @@ Thread h1;
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox9ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
+    private void btnDocenteNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteNuevoActionPerformed
+        dispose();
         ingresar_Docente mostrar = new ingresar_Docente();
         mostrar.setLocationRelativeTo(null);
         mostrar.setVisible(true);
         
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnDocenteNuevoActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       JOptionPane.showMessageDialog(null,"Aun no se registra en la BD");
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnAlumnoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlumnoNuevoActionPerformed
+        dispose();
+        Ingresar_Alumno mostrar = new Ingresar_Alumno();
+        mostrar.setLocationRelativeTo(null);
+        mostrar.setVisible(true);
+        
+    }//GEN-LAST:event_btnAlumnoNuevoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -508,6 +531,7 @@ Thread h1;
             java.util.logging.Logger.getLogger(Panel_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -519,11 +543,11 @@ Thread h1;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlumnoNuevo;
+    private javax.swing.JButton btnDocenteNuevo;
     private javax.swing.ButtonGroup cursoss;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JCheckBox jCheckBox1;
