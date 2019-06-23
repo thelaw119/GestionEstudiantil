@@ -96,7 +96,7 @@ Thread h1;
         jCheckBox10 = new javax.swing.JCheckBox();
         jCheckBox11 = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
-        jButton5 = new javax.swing.JButton();
+        btncurso = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
@@ -293,7 +293,12 @@ Thread h1;
 
         jCheckBox12.setText("Consejo de Curso");
 
-        jButton5.setText("Generar tabla");
+        btncurso.setText("Generar tabla");
+        btncurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncursoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -329,10 +334,10 @@ Thread h1;
                         .addGap(37, 37, 37)
                         .addComponent(jCheckBox12)))
                 .addGap(37, 37, 37))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(192, 192, 192)
-                .addComponent(jButton5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btncurso)
+                .addGap(238, 238, 238))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,9 +375,9 @@ Thread h1;
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox11)
                     .addComponent(jCheckBox12))
-                .addGap(70, 70, 70)
-                .addComponent(jButton5)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addComponent(btncurso)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Curso", jPanel4);
@@ -487,6 +492,15 @@ Thread h1;
         
     }//GEN-LAST:event_btnAlumnoNuevoActionPerformed
 
+    private void btncursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncursoActionPerformed
+        
+        dispose();
+        Tabla_Curso mostrar = new Tabla_Curso();
+        mostrar.setLocationRelativeTo(null);
+        mostrar.setVisible(true);        
+        
+    }//GEN-LAST:event_btncursoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -545,10 +559,10 @@ Thread h1;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlumnoNuevo;
     private javax.swing.JButton btnDocenteNuevo;
+    private javax.swing.JButton btncurso;
     private javax.swing.ButtonGroup cursoss;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
