@@ -553,17 +553,16 @@ Ctrl_Buscar_Alumno ctr_alumno;
         
 //        JOptionPane.showMessageDialog(null,"Aun no se registra en la BD");
         
-           
-         
-                
-         
+
             String buscar_alumno = txtbuscaralumno.getText();
+            
+            ctr_alumno.BuscarAlumno(buscar_alumno);
 //            Alumno alumno = new Alumno(txtbuscaralumno.getText());
-            Alumno datos = new Alumno();
-            ctr_alumno.Buscar_Alumno(datos);
+            //Alumno datos = new Alumno();
+            //ctr_alumno.Buscar_Alumno(datos);
 //        ctr_especialidad.Guardar_Datos(especialidad);
 //        
-         JOptionPane.showMessageDialog(null,datos);
+         //JOptionPane.showMessageDialog(null,datos);
 ////        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
 //        limpiarEspecialidad();
 //        //}
