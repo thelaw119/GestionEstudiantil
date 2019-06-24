@@ -193,23 +193,25 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
         Consulta_VerAlumn ver = new Consulta_VerAlumn();
         
         
-        
+        String grado = "";
         if (rb1medio.isSelected()) {
-            String grado = "1 Medio";
-            //ver.VerAlumn(tbtVerAlumn, grado);
+             grado = "1 Medio";
             ver.VerAlumn(tbtVerAlumn, grado);
         }
-//        if (rb2medio.isSelected()) {
-//            grado = "2 medio";
-//        }
-//        if (rb3medio.isSelected()) {
-//            grado = "3 medio";
-//        }
-//        if (rb4medio.isSelected()) {
-//            grado = "4 medio";
-//        }
+        if (rb2medio.isSelected()) {
+            grado = "2 Medio";
+            ver.VerAlumn(tbtVerAlumn, grado);
+        }
+        if (rb3medio.isSelected()) {
+            grado = "3 medio";
+            ver.VerAlumn(tbtVerAlumn, grado);
+        }
+        if (rb4medio.isSelected()) {
+            grado = "4 medio";
+            ver.VerAlumn(tbtVerAlumn, grado);
+        }
          
-        //ver.VerAlumn(tbtVerAlumn);
+       
 
     }//GEN-LAST:event_btnVerAlumnActionPerformed
 
