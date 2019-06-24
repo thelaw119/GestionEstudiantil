@@ -71,9 +71,9 @@ public class Tabla_Curso extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jButton1)
-                .addGap(131, 131, 131)
-                .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(138, 138, 138)
                 .addComponent(jButton3)
                 .addGap(56, 56, 56))
         );
