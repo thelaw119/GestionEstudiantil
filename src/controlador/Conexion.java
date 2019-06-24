@@ -23,7 +23,7 @@ public class Conexion {
     public String rutaDB; 
     
     public Conexion(){
-        rutaDB = "C:\\Users\\The Law\\Documents\\NetBeansProjects\\GestionEstudiantil\\Gestion_Estudiantil.sqlite";
+        rutaDB = "C:\\Users\\The Law\\Documents\\NetBeansProjects\\GestionEstudiantil\\Gestion_Estudiantil.s3db";
     }
     
     public void Conectar(){
