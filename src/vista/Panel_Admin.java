@@ -461,27 +461,26 @@ Ctrl_Especialidad ctr_especialidad;
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(215, 215, 215)
-                        .addComponent(btnguardarespecialidad))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel5)
-                        .addGap(132, 132, 132)
-                        .addComponent(txtespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addGap(112, 112, 112)
+                .addComponent(jLabel5)
+                .addGap(39, 39, 39)
+                .addComponent(txtespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnguardarespecialidad)
+                .addGap(199, 199, 199))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(144, 144, 144)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addComponent(btnguardarespecialidad)
-                .addGap(81, 81, 81))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Especialidades", jPanel7);
@@ -559,18 +558,26 @@ Ctrl_Especialidad ctr_especialidad;
     }
     
     private void btnguardarespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarespecialidadActionPerformed
-//     try{
+     try{
+        //if(txtespecialidad.getText() != ""){
+            
+            //JOptionPane.showMessageDialog(null, "Campo Vacio");
+            
+        //}else{
+            
+        
         String nombre_especialidad = txtespecialidad.getText();
         Especialidad especialidad = new Especialidad(
         txtespecialidad.getText());
         ctr_especialidad.Guardar_Datos(especialidad);
         
-//         JOptionPane.showMessageDialog(null,"guardado");
+         JOptionPane.showMessageDialog(null,"guardado");
 //        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
         limpiar();
-//     }catch(Exception e){
-//         JOptionPane.showMessageDialog(null, e.getMessage());
-//     }
+        //}
+     }catch(Exception e){
+         JOptionPane.showMessageDialog(null, e.getMessage());
+     }
         
     }//GEN-LAST:event_btnguardarespecialidadActionPerformed
 

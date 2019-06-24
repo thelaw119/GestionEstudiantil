@@ -34,9 +34,9 @@ public class Ctrl_Especialidad extends Conexion {
     }
 
     public void Guardar_Datos(Especialidad especialidad) {
-//        Especialidad mostrar = new Especialidad();
+//      Especialidad mostrar = new Especialidad();
 
-        Insertar("insert into ESPECIALIDAD values('"+
+        Insertar("insert into Especialidad(nombre_especialidad) values('"+
                 especialidad.getNombre_Especialidad()+"')");
                 
               
