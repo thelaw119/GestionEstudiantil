@@ -8,6 +8,7 @@ package objeto;
 /**
  *
  * @author joako
+ * @version
  */
 public class Alumno {
      private String rut_alumno ;
@@ -20,6 +21,11 @@ public class Alumno {
      private String contacto_apoderado;
      private String direccion_apoderado;
 
+    public Alumno() {
+    }
+
+     
+     
     public Alumno(String rut_alumno, String nombre_alumno, String apellido_alumno,
             String nacimiento_alumno, String clave_alumno, String rut_apoderado, 
             
