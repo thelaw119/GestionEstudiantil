@@ -17,25 +17,19 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Consulta_VerAlumn extends Conexion {
 
-    public void VerAlumn(JTable tbtVerAlumn, String grado) {
+    public void VerAlumn(JTable tbtVerAlumn) {
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Nombre"); //agrega columnas
         modelo.addColumn("Apellido");
         modelo.addColumn("Rut");
-        modelo.addColumn("Estado Matricula");
-        String[] datos = new String[4]; // arreglo para recorrer la tabla
+       
+        String[] datos = new String[3]; // arreglo para recorrer la tabla
         tbtVerAlumn.setModel(modelo);
         ResultSet resultado = null;
 
         Conectar();
         try {
-            String sql = "SELECT nombre_alumno , apellido_alumno ,rut_alumno ,estado_matricula"
-                    + " FROM Alumno "
-                    + " JOIN Matricula "
-                    + " ON Alumno.rut_alumno = Matricula.rut_alumno"
-                    + " JOIN Detalle_Curso "
-                    + " ON Alumno.rut_alumno = Detalle_Curso.rut_alumno7"
-                    + " WHERE grado = '" + grado + "'";
+            String sql = "Select * from Alumno";
 
             resultado = sentencia.executeQuery(sql);
 
@@ -43,7 +37,7 @@ public class Consulta_VerAlumn extends Conexion {
                 datos[0] = resultado.getString("nombre_alumno");
                 datos[1] = resultado.getString("apellido_alumno");
                 datos[2] = resultado.getString("rut_alumno");
-                datos[3] = resultado.getString("estado_matricula");
+               
 
                 modelo.addColumn(datos);
             }
