@@ -12,6 +12,8 @@ import vista.Ingresar_Alumno;
 import objeto.Especialidad;
 import controlador.Ctrl_Especialidad;
 import controlador.Ctrl_Buscar_Alumno;
+import controlador.Ctrl_Buscar_Docente;
+import java.awt.HeadlessException;
 import objeto.Alumno;
 /**
  *
@@ -23,6 +25,7 @@ Calendar calendario;
 Thread h1;
 Ctrl_Especialidad ctr_especialidad;
 Ctrl_Buscar_Alumno ctr_alumno;
+Ctrl_Buscar_Docente ctr_docente;
     /**
      * Creates new form Panel_Admin
      */
@@ -32,7 +35,8 @@ Ctrl_Buscar_Alumno ctr_alumno;
         ctr_especialidad.Conectar();
         ctr_alumno = new Ctrl_Buscar_Alumno();
         ctr_alumno.Conectar();
-        
+        ctr_docente = new Ctrl_Buscar_Docente();
+        ctr_docente.Conectar();
         Calendar cal = Calendar.getInstance(); 
         lblfecha.setText(fecha());
         h1 = new Thread(this);
@@ -164,6 +168,7 @@ Ctrl_Buscar_Alumno ctr_alumno;
 
         tabbedPaneAdministrador.addTab("Inicio", panel_inicio);
 
+        btnbuscardocente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnbuscardocente.setText("Buscar Docente");
         btnbuscardocente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,6 +179,7 @@ Ctrl_Buscar_Alumno ctr_alumno;
         txtbuscaDocente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtbuscaDocente.setText("jTextField1");
 
+        btnDocenteNuevo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnDocenteNuevo.setText("Ingresar nuevo Docente");
         btnDocenteNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,28 +191,28 @@ Ctrl_Buscar_Alumno ctr_alumno;
         panel_docentes.setLayout(panel_docentesLayout);
         panel_docentesLayout.setHorizontalGroup(
             panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_docentesLayout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_docentesLayout.createSequentialGroup()
+                .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panel_docentesLayout.createSequentialGroup()
-                        .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDocenteNuevo))
                     .addGroup(panel_docentesLayout.createSequentialGroup()
-                        .addComponent(btnbuscardocente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                        .addComponent(btnDocenteNuevo)
-                        .addGap(104, 104, 104))))
+                        .addGap(50, 50, 50)
+                        .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addComponent(btnbuscardocente)))
+                .addGap(94, 94, 94))
         );
         panel_docentesLayout.setVerticalGroup(
             panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_docentesLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addGap(121, 121, 121)
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnbuscardocente)
-                    .addComponent(btnDocenteNuevo))
-                .addGap(138, 138, 138))
+                    .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnbuscardocente))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addComponent(btnDocenteNuevo)
+                .addGap(94, 94, 94))
         );
 
         tabbedPaneAdministrador.addTab("Docentes", panel_docentes);
@@ -515,14 +521,23 @@ Ctrl_Buscar_Alumno ctr_alumno;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnbuscardocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscardocenteActionPerformed
-       
-        try{
+       /*
+        boton buscar un alumno por rut 
+        en la base de datos       
+        */
+        
+//        try{
+             
+        String buscar_docente = txtbuscaDocente.getText();
             
-            JOptionPane.showMessageDialog(null,"Aun no se registra en la BD");
-            
-        }catch(Exception e){
-            
-        }
+            ctr_docente.BuscarDocente(buscar_docente);
+
+//        }catch(HeadlessException e){
+//            JOptionPane.showMessageDialog(null,e.getMessage());
+//        }catch(Exception i){
+//            JOptionPane.showMessageDialog(null,i.getMessage());
+//        }
+                txtbuscaDocente.setText(null);
         
         
     }//GEN-LAST:event_btnbuscardocenteActionPerformed
@@ -551,26 +566,11 @@ Ctrl_Buscar_Alumno ctr_alumno;
         en la base de datos       
         */
         
-//        JOptionPane.showMessageDialog(null,"Aun no se registra en la BD");
-        
-
             String buscar_alumno = txtbuscaralumno.getText();
             
             ctr_alumno.BuscarAlumno(buscar_alumno);
-//            Alumno alumno = new Alumno(txtbuscaralumno.getText());
-            //Alumno datos = new Alumno();
-            //ctr_alumno.Buscar_Alumno(datos);
-//        ctr_especialidad.Guardar_Datos(especialidad);
-//        
-         //JOptionPane.showMessageDialog(null,datos);
-////        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
-//        limpiarEspecialidad();
-//        //}
-//     }catch(Exception e){
-//         JOptionPane.showMessageDialog(null, e.getMessage());
-//     }
-        
-        txtbuscaralumno.setText(null);
+
+            txtbuscaralumno.setText(null);
     }//GEN-LAST:event_btnbuscaralumnoActionPerformed
 
     private void btnAlumnoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlumnoNuevoActionPerformed
