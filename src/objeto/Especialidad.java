@@ -13,8 +13,6 @@ public class Especialidad {
     
     private String nombre_Especialidad;
 
-    public Especialidad() {
-    }
 
     public Especialidad(String nombre_Especialidad) {
         this.nombre_Especialidad = nombre_Especialidad;

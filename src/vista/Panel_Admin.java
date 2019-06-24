@@ -9,19 +9,24 @@ import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import vista.ingresar_Docente;
 import vista.Ingresar_Alumno;
+import objeto.Especialidad;
+import controlador.Ctrl_Especialidad;
 /**
  *
- * @author kimbe
+ * @author Darlyn
  */
 public class Panel_Admin extends javax.swing.JFrame implements Runnable{
 String hora,minutos,segundos;
 Calendar calendario;    
 Thread h1;
+Ctrl_Especialidad ctr_especialidad;
     /**
      * Creates new form Panel_Admin
      */
     public Panel_Admin() {
         initComponents();
+        ctr_especialidad = new Ctrl_Especialidad();
+        ctr_especialidad.Conectar();
         Calendar cal = Calendar.getInstance(); 
         lblfecha.setText(fecha());
         h1 = new Thread(this);
@@ -547,11 +552,25 @@ Thread h1;
         
     }//GEN-LAST:event_btncursoActionPerformed
 
+    
+    public void limpiar(){
+        
+        txtespecialidad.setText(null);
+    }
+    
     private void btnguardarespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarespecialidadActionPerformed
-     
+//     try{
+        String nombre_especialidad = txtespecialidad.getText();
+        Especialidad especialidad = new Especialidad(
+        txtespecialidad.getText());
+        ctr_especialidad.Guardar_Datos(especialidad);
         
-        
-        
+//         JOptionPane.showMessageDialog(null,"guardado");
+//        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
+        limpiar();
+//     }catch(Exception e){
+//         JOptionPane.showMessageDialog(null, e.getMessage());
+//     }
         
     }//GEN-LAST:event_btnguardarespecialidadActionPerformed
 
