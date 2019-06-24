@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.Consulta_VerAlumn;
 import javax.swing.ButtonGroup;
 
 /**
@@ -20,26 +21,20 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
         initComponents();
         ConfigRBAlumn();
     }
-    
-    public void ConfigRBAlumn(){
-        
+
+    public void ConfigRBAlumn() {
+
         ButtonGroup curso = new ButtonGroup();
-        
+
         curso.add(rb1medio);
         curso.add(rb2medio);
         curso.add(rb3medio);
         curso.add(rb4medio);
-        
+
         rb1medio.setSelected(true);
-        
-        
-        
+
     }
-    
-    
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,8 +68,10 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setText("Alumnos");
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setText("Cursos");
 
         rb1medio.setText("1 medio");
@@ -87,18 +84,23 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
 
         tbtVerAlumn.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Nombre", "Apellido", "Rut", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(tbtVerAlumn);
 
         btnVerAlumn.setText("VER");
+        btnVerAlumn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerAlumnActionPerformed(evt);
+            }
+        });
 
         btnAtras.setText("ATRAS");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -117,19 +119,21 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
                         .addGap(72, 72, 72)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rb1medio)
-                            .addComponent(jLabel2)
                             .addComponent(rb2medio)
                             .addComponent(rb3medio)
                             .addComponent(rb4medio)
-                            .addComponent(btnVerAlumn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnVerAlumn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 397, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(373, 373, 373))
         );
@@ -142,7 +146,7 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
+                        .addGap(33, 33, 33)
                         .addComponent(rb1medio)
                         .addGap(18, 18, 18)
                         .addComponent(rb2medio)
@@ -150,11 +154,11 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
                         .addComponent(rb3medio)
                         .addGap(18, 18, 18)
                         .addComponent(rb4medio)
-                        .addGap(91, 91, 91)
+                        .addGap(76, 76, 76)
                         .addComponent(btnVerAlumn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAtras))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -181,9 +185,30 @@ public class Panel_VerAlumn extends javax.swing.JFrame {
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         Panel_Profesor ver = new Panel_Profesor();
         ver.setVisible(true);
-        
+
         dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnVerAlumnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerAlumnActionPerformed
+        Consulta_VerAlumn ver = new Consulta_VerAlumn();
+        
+        String grado = "";
+        if (rb1medio.isSelected()) {
+            grado = "1 medio";
+        }
+        if (rb2medio.isSelected()) {
+            grado = "2 medio";
+        }
+        if (rb3medio.isSelected()) {
+            grado = "3 medio";
+        }
+        if (rb4medio.isSelected()) {
+            grado = "4 medio";
+        }
+         
+        ver.VerAlumn(tbtVerAlumn, grado);
+
+    }//GEN-LAST:event_btnVerAlumnActionPerformed
 
     /**
      * @param args the command line arguments
