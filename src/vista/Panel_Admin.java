@@ -177,7 +177,6 @@ Ctrl_Buscar_Docente ctr_docente;
         });
 
         txtbuscaDocente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtbuscaDocente.setText("jTextField1");
 
         btnDocenteNuevo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnDocenteNuevo.setText("Ingresar nuevo Docente");
@@ -198,8 +197,8 @@ Ctrl_Buscar_Docente ctr_docente;
                         .addComponent(btnDocenteNuevo))
                     .addGroup(panel_docentesLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                         .addComponent(btnbuscardocente)))
                 .addGap(94, 94, 94))
         );
@@ -208,9 +207,9 @@ Ctrl_Buscar_Docente ctr_docente;
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_docentesLayout.createSequentialGroup()
                 .addGap(121, 121, 121)
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscardocente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
                 .addComponent(btnDocenteNuevo)
                 .addGap(94, 94, 94))
         );
@@ -218,7 +217,6 @@ Ctrl_Buscar_Docente ctr_docente;
         tabbedPaneAdministrador.addTab("Docentes", panel_docentes);
 
         txtbuscaralumno.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtbuscaralumno.setText("jTextField2");
 
         btnbuscaralumno.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnbuscaralumno.setText("Buscar Alumno");
@@ -606,9 +604,10 @@ Ctrl_Buscar_Docente ctr_docente;
             
         
         String nombre_especialidad = txtespecialidad.getText();
-        Especialidad especialidad = new Especialidad(
-        txtespecialidad.getText());
-        ctr_especialidad.Guardar_Datos(especialidad);
+        
+        //Especialidad especialidad = new Especialidad(
+        //txtespecialidad.getText());
+        //ctr_especialidad.Guardar_Datos(especialidad);
         
          JOptionPane.showMessageDialog(null,"guardado");
 //        controlador.Ctrl_Especialidad(Ctrl_Especialidad)

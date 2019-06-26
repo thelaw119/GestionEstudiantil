@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import vista.Panel_Admin;
+import vista.Panel_Alumno;
 import vista.Panel_Profesor;
 
 /**
@@ -114,7 +115,7 @@ public class Ctrl_login extends Conexion{
            if(contador == 1){
                
                JOptionPane.showMessageDialog(null, "Ingresado con exito!");
-               JOptionPane.showMessageDialog(null, "Bienvenido:" + rut_prof + "  " + "Rut: " + nombre_prof);
+               JOptionPane.showMessageDialog(null, "Bienvenido:" + nombre_prof  + "  " + "Rut: " + rut_prof);
                Panel_Profesor mostrar_prof = new Panel_Profesor();
                mostrar_prof.setLocationRelativeTo(null);
                mostrar_prof.setVisible(true);
@@ -166,12 +167,12 @@ public class Ctrl_login extends Conexion{
            if(contador == 1){
                
                JOptionPane.showMessageDialog(null, "Ingresado con exito!");
-               JOptionPane.showMessageDialog(null, "Bienvenido:" + rut_alum + "  " + "Rut: " + nombre_alum);
+               JOptionPane.showMessageDialog(null, "Bienvenido:"+ nombre_alum + "  " + "Rut: " + rut_alum);
                
-               //ACTIVAR CUANDO ESTE CREADO LA VISTA PANEL_ALUMNO
-               /*Panel_Alumno mostrar_alum = new Panel_Alumno();
+               
+               Panel_Alumno mostrar_alum = new Panel_Alumno();
                mostrar_alum.setLocationRelativeTo(null);
-               mostrar_alum.setVisible(true);*/
+               mostrar_alum.setVisible(true);
                 
    
            }else if(contador > 1){

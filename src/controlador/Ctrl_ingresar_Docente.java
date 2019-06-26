@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import objeto.Profesor;
@@ -12,48 +13,39 @@ import objeto.Profesor;
 /**
  *
  * @author Darlyn
+ * @Modificado The Law
  */
 public class Ctrl_ingresar_Docente extends Conexion{
 
+    ResultSet resultado = null;
+    
     public Ctrl_ingresar_Docente() {
     }
     
-    public boolean Insertar(String SQL) {
-        boolean valor = true;
+
+    
+    
+    
+    public void IngresarDocente(String rutdocente, String nombredocente, String apellidodocente, String nacimientodocente, String clavedocente, String direcciondocente, String contactodocente, int id){
+        
+        
         Conectar();
-        try {
-            sentencia.executeUpdate(SQL);
-            
-        }catch(SQLException e){
-                valor =false;
-                JOptionPane.showMessageDialog(null,e.getMessage());
-        }finally{
-            try{
-                sentencia.close();
-                conexion.close();
-            }catch(SQLException i){
-                JOptionPane.showMessageDialog(null, i.getMessage());
-            }
+        
+        try{
+        
+        String sql = "Insert into Profesor(rut_profesor, nombre_profesor, apellido_profesor, nacimiento_profesor, clave_profesor, "
+                + "direccion_profesor, contacto_profesor, id_especialidad) values('"+rutdocente+"','"+nombredocente+"',"
+                + "'"+apellidodocente+"','"+nacimientodocente+"','"+clavedocente+"','"+direcciondocente+"','"+contactodocente+"','"+id+"')";
+        
+        
+        sentencia.executeUpdate(sql);
+        
+        JOptionPane.showMessageDialog(null, "Agregado con exito!");
+        
         }
-        return valor;
-    }
-
-    public void Guardar_Datos(Profesor docente) {
-//      Especialidad mostrar = new Especialidad();
-
-        Insertar("insert into Profesor(rut_profesor,nombre_profesor,"
-                + "apellido_profesor,nacimiento_profesor,clave_profesor,"
-                + "direccion_profesor,contacto_profesor,id_especialidad) "
-                + "values('"+ docente.getRut_profesor()+"'"
-                        + "'"+ docente.getNombre_profesor()+"'"
-                        + "'"+ docente.getApellido_profesor()+"'"
-                        + "'"+ docente.getNacimiento_profesor()+"'"
-                        + "'"+ docente.getClave_profesor()+"'"
-                        + "'"+ docente.getDireccion_profesor()+"'"
-                        + "'"+ docente.getContacto_profesor()+"'"
-                        + "'"+ docente.getId_especialidad()+"')");
-                
-              
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 
 }

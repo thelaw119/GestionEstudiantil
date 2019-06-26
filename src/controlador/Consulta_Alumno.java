@@ -1,39 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controlador;
 
 import com.sun.istack.internal.logging.Logger;
 import java.sql.ResultSet;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import vista.ingresar_Docente;
-import objeto.Especialidad;
+import vista.Panel_IngresoNotas;
+import objeto.Alumno;
 
 /**
  *
  * @author Darlyn
- * @Modificado The Law
+ * @Modificado The law
  */
-public class Consulta_EspecialidadesDocente extends Conexion{
+public class Consulta_Alumno extends Conexion{
     ResultSet resultado = null;
 
     
-    public void BuscarEspecialidad(JComboBox cbespecialidad) {
+    public void BuscarAlumno(JComboBox cbalumno) {
         
         Conectar();
         
-        String sql = "select id_especialidad, nombre_especialidad from Especialidad"; 
+        String sql = "select rut_alumno, nombre_alumno from Alumno"; 
         
         try{
             
             resultado  = sentencia.executeQuery(sql);
             
-            cbespecialidad.addItem("Seleccione una especialidad");
+            cbalumno.addItem("Seleccione un ALumno");
             
+
             
             while(resultado.next()){
 
-                cbespecialidad.addItem(
-                new Especialidad(Integer.parseInt(resultado.getString("id_especialidad")),
-                resultado.getString("nombre_especialidad")));
+                cbalumno.addItem(
+                new Alumno(resultado.getString("rut_alumno"), resultado.getString("nombre_alumno")));
             }
             
         }catch(Exception e){

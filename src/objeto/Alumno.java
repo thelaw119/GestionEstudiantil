@@ -21,15 +21,7 @@ public class Alumno {
      private String contacto_apoderado;
      private String direccion_apoderado;
 
-    public Alumno() {
-    }
-
-     
-     
-    public Alumno(String rut_alumno, String nombre_alumno, String apellido_alumno,
-            String nacimiento_alumno, String clave_alumno, String rut_apoderado, 
-            
-            String parentesco_apoderado, String contacto_apoderado, String direccion_apoderado) {
+    public Alumno(String rut_alumno, String nombre_alumno, String apellido_alumno, String nacimiento_alumno, String clave_alumno, String rut_apoderado, String parentesco_apoderado, String contacto_apoderado, String direccion_apoderado) {
         this.rut_alumno = rut_alumno;
         this.nombre_alumno = nombre_alumno;
         this.apellido_alumno = apellido_alumno;
@@ -40,6 +32,16 @@ public class Alumno {
         this.contacto_apoderado = contacto_apoderado;
         this.direccion_apoderado = direccion_apoderado;
     }
+
+    public Alumno(String rut_alumno, String nombre_alumno) {
+        this.rut_alumno = rut_alumno;
+        this.nombre_alumno = nombre_alumno;
+    }
+
+    
+
+    
+    
 
     public String getRut_alumno() {
         return rut_alumno;
@@ -113,4 +115,8 @@ public class Alumno {
         this.direccion_apoderado = direccion_apoderado;
     }
      
+    @Override
+    public String toString() {
+        return rut_alumno + ". " + nombre_alumno;
+    }
 }

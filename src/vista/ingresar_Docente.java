@@ -5,7 +5,10 @@
  */
 package vista;
 
+import controlador.Conexion;
+import controlador.Consulta_EspecialidadesDocente;
 import controlador.Ctrl_ingresar_Docente;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import objeto.Especialidad;
 import objeto.Profesor;
@@ -14,18 +17,29 @@ import vista.Panel_Admin;
 /**
  *
  * @author kimbe
+ * @Modificacion The Law 
  */
 public class ingresar_Docente extends javax.swing.JFrame {
-Ctrl_ingresar_Docente ctr_ingresardocente;
+
+    Ctrl_ingresar_Docente ctr_ingresardocente;
+
+    Consulta_EspecialidadesDocente carga = new Consulta_EspecialidadesDocente();
     /**
      * Creates new form ingresar_Docente
      */
+
+    ResultSet resultado = null;
+
     public ingresar_Docente() {
         initComponents();
         ctr_ingresardocente = new Ctrl_ingresar_Docente();
         ctr_ingresardocente.Conectar();
-        
-        
+
+        carga.BuscarEspecialidad(cbespecialidad);
+
+        //Conexion con = new Conexion();
+        //con.Conectar();
+
     }
 
     /**
@@ -49,7 +63,7 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jComboBoxespecialidad = new javax.swing.JComboBox<>();
+        cbespecialidad = new javax.swing.JComboBox<Especialidad>();
         jLabel7 = new javax.swing.JLabel();
         txtnacimiento = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -65,19 +79,16 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
         jLabel1.setText("Rut:");
 
         txtrut.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        txtrut.setText("jTextField1");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel2.setText("Nombre:");
 
         txtnombre.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        txtnombre.setText("jTextField2");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setText("Especialidad:");
 
         txtapellido.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        txtapellido.setText("jTextField3");
 
         btnguardar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnguardar.setText("Guardar");
@@ -109,11 +120,10 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Apellido:");
 
-        jComboBoxespecialidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jComboBoxespecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lenguaje", "Matemática", "Ingles", "Artes Visuales", "Artes Musicales", "Historia", " " }));
-        jComboBoxespecialidad.addActionListener(new java.awt.event.ActionListener() {
+        cbespecialidad.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        cbespecialidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxespecialidadActionPerformed(evt);
+                cbespecialidadActionPerformed(evt);
             }
         });
 
@@ -121,7 +131,6 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
         jLabel7.setText("Fecha de Nacimiento:");
 
         txtnacimiento.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        txtnacimiento.setText("jTextField1");
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel8.setText("Contraseña:");
@@ -133,10 +142,6 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
 
         jLabel10.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel10.setText("Contacto:");
-
-        txtdireccion.setText("jTextField1");
-
-        txtcontacto.setText("jTextField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -167,7 +172,7 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
                                     .addComponent(jLabel2)))
                             .addGap(125, 125, 125)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jComboBoxespecialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbespecialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtclave)
                                 .addComponent(txtnacimiento)
                                 .addComponent(txtapellido)
@@ -213,7 +218,7 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(121, 121, 121)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnguardar)
@@ -236,59 +241,55 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
-        
-        try{
-        //if(txtespecialidad.getText() != ""){
-            
-            //JOptionPane.showMessageDialog(null, "Campo Vacio");
-            
-        //}else{
-           
-        String rutdocente = txtrut.getText();
-        String nombredocente = txtnombre.getText();
-        String apellidodocente = txtapellido.getText();
-        String nacimientodocente = txtnacimiento.getText();
-        String clavedocente = txtclave.getText();
-        String direcciondocente = txtdireccion.getText();
-        String contactodocente = txtcontacto.getText();
-//        String especialidaddocente = txtespecialidad.getText();
-        
 
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+
+        
+        
+        try {
+        //if(txtespecialidad.getText() != ""){
+
+            //JOptionPane.showMessageDialog(null, "Campo Vacio");
+        //}else{
+            String rutdocente = txtrut.getText();
+            String nombredocente = txtnombre.getText();
+            String apellidodocente = txtapellido.getText();
+            String nacimientodocente = txtnacimiento.getText();
+            String clavedocente = txtclave.getText();
+            String direcciondocente = txtdireccion.getText();
+            String contactodocente = txtcontacto.getText();
+            int id = cbespecialidad.getItemAt(cbespecialidad.getSelectedIndex()).getId_Especialidad();
+            //String especialidaddocente = cbespecialidad.getSelectedItem().toString();
+            
 //        Profesor docente = new Profesor(
 //        txtrut.getText());
 //        ctr_especialidad.Guardar_Datos(especialidad);
-        
-        
-        
-        
-        
-         JOptionPane.showMessageDialog(null,"guardado");
-         
+            //JOptionPane.showMessageDialog(null, id);
+            
+            
+            ctr_ingresardocente.IngresarDocente(rutdocente, nombredocente, apellidodocente, nacimientodocente, clavedocente, direcciondocente, contactodocente, id);
+            
 //        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
-
 //        limpiarDocente();
-        //}
-     }catch(Exception e){
-         JOptionPane.showMessageDialog(null, e.getMessage());
-     }
-        
-        
-        
-        
+            //}
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+
+
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-   
-         dispose();
+
+        dispose();
         Panel_Admin mostrar = new Panel_Admin();
         mostrar.setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiarActionPerformed
-        
+
         txtrut.setText(null);
         txtnombre.setText(null);
         txtapellido.setText(null);
@@ -296,16 +297,13 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
         txtclave.setText(null);
         txtdireccion.setText(null);
         txtcontacto.setText(null);
-                         
+
     }//GEN-LAST:event_btnlimpiarActionPerformed
 
-    private void jComboBoxespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxespecialidadActionPerformed
-       
-        
-        
-        
-        
-    }//GEN-LAST:event_jComboBoxespecialidadActionPerformed
+    private void cbespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbespecialidadActionPerformed
+
+
+    }//GEN-LAST:event_cbespecialidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,8 +344,8 @@ Ctrl_ingresar_Docente ctr_ingresardocente;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnlimpiar;
+    private javax.swing.JComboBox<Especialidad> cbespecialidad;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBoxespecialidad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
