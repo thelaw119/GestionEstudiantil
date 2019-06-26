@@ -88,30 +88,13 @@ Ctrl_Buscar_Docente ctr_docente;
         btnbuscardocente = new javax.swing.JButton();
         txtbuscaDocente = new javax.swing.JTextField();
         btnDocenteNuevo = new javax.swing.JButton();
+        btnmodificar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         panel_alumnos = new javax.swing.JPanel();
         txtbuscaralumno = new javax.swing.JTextField();
         btnbuscaralumno = new javax.swing.JButton();
         btnAlumnoNuevo = new javax.swing.JButton();
-        panel_cursos = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        btncurso = new javax.swing.JButton();
         panel_matricula = new javax.swing.JPanel();
         btnestadomatricula = new javax.swing.JButton();
         txtmatricula = new javax.swing.JTextField();
@@ -179,39 +162,61 @@ Ctrl_Buscar_Docente ctr_docente;
         txtbuscaDocente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         btnDocenteNuevo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnDocenteNuevo.setText("Ingresar nuevo Docente");
+        btnDocenteNuevo.setText("Agregar Docente");
         btnDocenteNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDocenteNuevoActionPerformed(evt);
             }
         });
 
+        btnmodificar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnmodificar.setText("Modificar Docente");
+        btnmodificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmodificarActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Rut Docente:");
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton2.setText("Eliminar");
+
         javax.swing.GroupLayout panel_docentesLayout = new javax.swing.GroupLayout(panel_docentes);
         panel_docentes.setLayout(panel_docentesLayout);
         panel_docentesLayout.setHorizontalGroup(
             panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_docentesLayout.createSequentialGroup()
-                .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(panel_docentesLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
                     .addGroup(panel_docentesLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDocenteNuevo))
+                        .addComponent(btnDocenteNuevo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_docentesLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
                         .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                        .addGap(90, 90, 90)
                         .addComponent(btnbuscardocente)))
-                .addGap(94, 94, 94))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         panel_docentesLayout.setVerticalGroup(
             panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_docentesLayout.createSequentialGroup()
-                .addGap(121, 121, 121)
+                .addGap(94, 94, 94)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscardocente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
-                .addComponent(btnDocenteNuevo)
-                .addGap(94, 94, 94))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDocenteNuevo)
+                    .addComponent(btnmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
         );
 
         tabbedPaneAdministrador.addTab("Docentes", panel_docentes);
@@ -263,147 +268,6 @@ Ctrl_Buscar_Docente ctr_docente;
         );
 
         tabbedPaneAdministrador.addTab("Alumnos", panel_alumnos);
-
-        cursoss.add(jRadioButton1);
-        jRadioButton1.setText("1 medio");
-
-        cursoss.add(jRadioButton2);
-        jRadioButton2.setText("2 medio");
-
-        cursoss.add(jRadioButton3);
-        jRadioButton3.setText("3 medio");
-
-        cursoss.add(jRadioButton4);
-        jRadioButton4.setText("4 medio");
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setText("Seleccione curso:");
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel3.setText("Seleccione Materias:");
-
-        jCheckBox1.setText("Lenguaje");
-
-        jCheckBox2.setText("Matemáticas");
-
-        jCheckBox3.setText("Religión");
-
-        jCheckBox4.setText("Historia");
-
-        jCheckBox5.setText("Ingles");
-
-        jCheckBox6.setText("Artes");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox7.setText("Fisica");
-
-        jCheckBox8.setText("Quimica");
-
-        jCheckBox9.setText("Biologia");
-        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox9ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox10.setText("Ed. Fisica");
-
-        jCheckBox11.setText("Filosofía");
-
-        jCheckBox12.setText("Consejo de Curso");
-
-        btncurso.setText("Generar tabla");
-        btncurso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncursoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panel_cursosLayout = new javax.swing.GroupLayout(panel_cursos);
-        panel_cursos.setLayout(panel_cursosLayout);
-        panel_cursosLayout.setHorizontalGroup(
-            panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cursosLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(panel_cursosLayout.createSequentialGroup()
-                        .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox7))
-                        .addGap(33, 33, 33)
-                        .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox8)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jCheckBox10)))
-                    .addComponent(jCheckBox9)
-                    .addGroup(panel_cursosLayout.createSequentialGroup()
-                        .addComponent(jCheckBox11)
-                        .addGap(37, 37, 37)
-                        .addComponent(jCheckBox12)))
-                .addGap(37, 37, 37))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cursosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btncurso)
-                .addGap(238, 238, 238))
-        );
-        panel_cursosLayout.setVerticalGroup(
-            panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_cursosLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(28, 28, 28)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jRadioButton1))
-                .addGap(18, 18, 18)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jCheckBox3))
-                .addGap(18, 18, 18)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jCheckBox10))
-                .addGap(18, 18, 18)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton4)
-                    .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jCheckBox7)
-                        .addComponent(jCheckBox8)))
-                .addGap(18, 18, 18)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox6))
-                .addGap(18, 18, 18)
-                .addGroup(panel_cursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox11)
-                    .addComponent(jCheckBox12))
-                .addGap(76, 76, 76)
-                .addComponent(btncurso)
-                .addContainerGap(91, Short.MAX_VALUE))
-        );
-
-        tabbedPaneAdministrador.addTab("Curso", panel_cursos);
 
         btnestadomatricula.setText("Ver estado de Matricula");
         btnestadomatricula.addActionListener(new java.awt.event.ActionListener() {
@@ -518,75 +382,106 @@ Ctrl_Buscar_Docente ctr_docente;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnbuscardocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscardocenteActionPerformed
-       /*
-        boton buscar un alumno por rut 
-        en la base de datos       
-        */
-        
-//        try{
-             
-        String buscar_docente = txtbuscaDocente.getText();
-            
-            ctr_docente.BuscarDocente(buscar_docente);
+    private void btnguardarespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarespecialidadActionPerformed
+        try{
+            //if(txtespecialidad.getText() != ""){
 
-//        }catch(HeadlessException e){
-//            JOptionPane.showMessageDialog(null,e.getMessage());
-//        }catch(Exception i){
-//            JOptionPane.showMessageDialog(null,i.getMessage());
-//        }
-                txtbuscaDocente.setText(null);
-        
-        
-    }//GEN-LAST:event_btnbuscardocenteActionPerformed
+                //JOptionPane.showMessageDialog(null, "Campo Vacio");
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+                //}else{
 
-    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox9ActionPerformed
+                String nombre_especialidad = txtespecialidad.getText();
 
-    private void btnDocenteNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteNuevoActionPerformed
-        dispose();
-        ingresar_Docente mostrar = new ingresar_Docente();
-        mostrar.setLocationRelativeTo(null);
-        mostrar.setVisible(true);
-        
-        
-    }//GEN-LAST:event_btnDocenteNuevoActionPerformed
+                //Especialidad especialidad = new Especialidad(
+                    //txtespecialidad.getText());
+                //ctr_especialidad.Guardar_Datos(especialidad);
 
-    private void btnbuscaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscaralumnoActionPerformed
-       
-        /*
-        boton buscar un alumno por rut 
-        en la base de datos       
-        */
-        
-            String buscar_alumno = txtbuscaralumno.getText();
-            
-            ctr_alumno.BuscarAlumno(buscar_alumno);
+                JOptionPane.showMessageDialog(null,"guardado");
+                //        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
+                limpiarEspecialidad();
+                //}
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
 
-            txtbuscaralumno.setText(null);
-    }//GEN-LAST:event_btnbuscaralumnoActionPerformed
+    }//GEN-LAST:event_btnguardarespecialidadActionPerformed
+
+    private void btnestadomatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnestadomatriculaActionPerformed
+
+        //        String numero_matricula = txtmatricula.getText();
+        //        Matricula matricula = new Matricula(
+            //        txtmatricula.getText());
+        ////        ctr_especialidad.Guardar_Datos(especialidad);
+
+        //         JOptionPane.showMessageDialog(null,"guardado");
+
+        limpiarMatricula();
+
+        //     }catch(Exception e){
+        //         JOptionPane.showMessageDialog(null, e.getMessage());
+        //     }
+
+    }//GEN-LAST:event_btnestadomatriculaActionPerformed
 
     private void btnAlumnoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlumnoNuevoActionPerformed
         dispose();
         Ingresar_Alumno mostrar = new Ingresar_Alumno();
         mostrar.setLocationRelativeTo(null);
         mostrar.setVisible(true);
-        
+
     }//GEN-LAST:event_btnAlumnoNuevoActionPerformed
 
-    private void btncursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncursoActionPerformed
-        
+    private void btnbuscaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscaralumnoActionPerformed
+
+        /*
+        boton buscar un alumno por rut
+        en la base de datos
+        */
+
+        String buscar_alumno = txtbuscaralumno.getText();
+
+        ctr_alumno.BuscarAlumno(buscar_alumno);
+
+        txtbuscaralumno.setText(null);
+    }//GEN-LAST:event_btnbuscaralumnoActionPerformed
+
+    private void btnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodificarActionPerformed
+
         dispose();
-        Tabla_Curso mostrar = new Tabla_Curso();
+        ingresar_Docente mostrar = new ingresar_Docente();
         mostrar.setLocationRelativeTo(null);
-        mostrar.setVisible(true);        
-        
-    }//GEN-LAST:event_btncursoActionPerformed
+        mostrar.setVisible(true);
+
+    }//GEN-LAST:event_btnmodificarActionPerformed
+
+    private void btnDocenteNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteNuevoActionPerformed
+        dispose();
+        ingresar_Docente mostrar = new ingresar_Docente();
+        mostrar.setLocationRelativeTo(null);
+        mostrar.setVisible(true);
+
+    }//GEN-LAST:event_btnDocenteNuevoActionPerformed
+
+    private void btnbuscardocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscardocenteActionPerformed
+        /*
+        boton buscar un alumno por rut
+        en la base de datos
+        */
+
+        //        try{
+
+            String buscar_docente = txtbuscaDocente.getText();
+
+            ctr_docente.BuscarDocente(buscar_docente);
+
+            //        }catch(HeadlessException e){
+            //            JOptionPane.showMessageDialog(null,e.getMessage());
+            //        }catch(Exception i){
+            //            JOptionPane.showMessageDialog(null,i.getMessage());
+            //        }
+        txtbuscaDocente.setText(null);
+
+    }//GEN-LAST:event_btnbuscardocenteActionPerformed
 
     
     public void limpiarEspecialidad(){
@@ -594,56 +489,10 @@ Ctrl_Buscar_Docente ctr_docente;
         txtespecialidad.setText(null);
     }
     
-    private void btnguardarespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarespecialidadActionPerformed
-     try{
-        //if(txtespecialidad.getText() != ""){
-            
-            //JOptionPane.showMessageDialog(null, "Campo Vacio");
-            
-        //}else{
-            
-        
-        String nombre_especialidad = txtespecialidad.getText();
-        
-        //Especialidad especialidad = new Especialidad(
-        //txtespecialidad.getText());
-        //ctr_especialidad.Guardar_Datos(especialidad);
-        
-         JOptionPane.showMessageDialog(null,"guardado");
-//        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
-        limpiarEspecialidad();
-        //}
-     }catch(Exception e){
-         JOptionPane.showMessageDialog(null, e.getMessage());
-     }
-        
-    }//GEN-LAST:event_btnguardarespecialidadActionPerformed
-
      public void limpiarMatricula(){
         
         txtmatricula.setText(null);
     }
-    private void btnestadomatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnestadomatriculaActionPerformed
-       
-//        String numero_matricula = txtmatricula.getText();
-//        Matricula matricula = new Matricula(
-//        txtmatricula.getText());
-////        ctr_especialidad.Guardar_Datos(especialidad);
-
-//         JOptionPane.showMessageDialog(null,"guardado");
-
-        limpiarMatricula();
-
-//     }catch(Exception e){
-//         JOptionPane.showMessageDialog(null, e.getMessage());
-//     }
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_btnestadomatriculaActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -704,38 +553,21 @@ Ctrl_Buscar_Docente ctr_docente;
     private javax.swing.JButton btnDocenteNuevo;
     private javax.swing.JButton btnbuscaralumno;
     private javax.swing.JButton btnbuscardocente;
-    private javax.swing.JButton btncurso;
     private javax.swing.JButton btnestadomatricula;
     private javax.swing.JButton btnguardarespecialidad;
+    private javax.swing.JButton btnmodificar;
     private javax.swing.ButtonGroup cursoss;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblfecha;
     private javax.swing.JLabel lblhora;
     private javax.swing.JPanel panel_alumnos;
     private javax.swing.JPanel panel_ayuda;
-    private javax.swing.JPanel panel_cursos;
     private javax.swing.JPanel panel_docentes;
     private javax.swing.JPanel panel_especialidades;
     private javax.swing.JPanel panel_inicio;
