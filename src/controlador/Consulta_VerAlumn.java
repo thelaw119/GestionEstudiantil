@@ -55,7 +55,7 @@ public class Consulta_VerAlumn extends Conexion {
                 modelo.addRow(datos);
             }
             
-            //JOptionPane.showMessageDialog(null, datos);
+           
             tbtVerAlumn.setModel(modelo);
             sentencia.close();
             conexion.close();
