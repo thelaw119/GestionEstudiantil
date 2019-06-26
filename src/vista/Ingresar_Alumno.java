@@ -120,6 +120,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         rbmasculino.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         rbmasculino.setText("Masculino");
 
+        btnguardar.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnguardar.setText("Guardar");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +128,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
             }
         });
 
+        btnlimpiar.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnlimpiar.setText("Limpiar");
         btnlimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +136,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
             }
         });
 
+        btnvolver.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnvolver.setText("Volver");
         btnvolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +178,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(23, 23, 23)
                                     .addComponent(btnguardar)
-                                    .addGap(71, 71, 71)
+                                    .addGap(84, 84, 84)
                                     .addComponent(btnlimpiar)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnvolver))
@@ -183,7 +186,9 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
                                     .addGap(0, 0, Short.MAX_VALUE)
                                     .addComponent(fechanac)
                                     .addGap(299, 299, 299))
-                                .addComponent(datosalumno))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(datosalumno)
+                                    .addGap(0, 0, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -307,7 +312,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtrutapoderado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnguardar)
                     .addComponent(btnlimpiar)
