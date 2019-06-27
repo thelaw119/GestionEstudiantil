@@ -47,6 +47,6 @@ public class Ctrl_ingresar_Docente extends Conexion{
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-
+ 
 }
    
