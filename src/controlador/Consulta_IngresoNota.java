@@ -9,16 +9,16 @@ import javax.swing.JOptionPane;
  */
 public class Consulta_IngresoNota extends Conexion{
     
-    public void IngresarDocente(String rutprofesor, String rutalumno, String aula, double notafinal){
+    public void IngresarDocente(String rutprofesor, String rutalumno, double notafinal){
         
      
         Conectar();
         
         try{
         
-        String sql = "Insert into Detalle_Curso(aula, notas, rut_profesor, rut_alumno) "
-                + "values('"+aula+"','"+notafinal+"',"
-                + "'"+rutprofesor+"','"+rutalumno+"')";
+        String sql = "Insert into nota(final_nota, rut_alumno, rut_profesor) "
+                + "values('"+notafinal+"','"+rutalumno+"',"
+                + "'"+rutprofesor+"')";
         
         
         sentencia.executeUpdate(sql);

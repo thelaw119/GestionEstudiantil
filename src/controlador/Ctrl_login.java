@@ -156,8 +156,8 @@ public class Ctrl_login extends Conexion{
            
             while(resultado.next()){
                 contador = contador + 1;
-                rut_alum = resultado.getString("rut_profesor");
-                nombre_alum = resultado.getString("nombre_profesor");
+                rut_alum = resultado.getString("rut_alumno");
+                nombre_alum = resultado.getString("nombre_alumno");
             }
    
            System.out.println(contador);

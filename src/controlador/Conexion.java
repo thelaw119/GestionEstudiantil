@@ -38,7 +38,7 @@ public class Conexion {
             try{
                 conexion = DriverManager.getConnection("jdbc:sqlite:"+rutaDB);
                 sentencia = conexion.createStatement();
-                JOptionPane.showMessageDialog(null, "Conectado");
+                //JOptionPane.showMessageDialog(null, "Conectado");
             }catch (Exception e){
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }

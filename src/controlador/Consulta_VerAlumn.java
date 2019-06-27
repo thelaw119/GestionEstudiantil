@@ -27,7 +27,7 @@ public class Consulta_VerAlumn extends Conexion {
         modelo.addColumn("Nombre"); //agrega columnas
         modelo.addColumn("Apellido");
         modelo.addColumn("Rut");
-        modelo.addColumn("Matricula");
+        modelo.addColumn("Aula");
         
         String[] datos = new String[4]; // arreglo para recorrer la tabla
         tbtVerAlumn.setModel(modelo);
@@ -35,10 +35,10 @@ public class Consulta_VerAlumn extends Conexion {
 
         Conectar();
         try {
-            String sql = "SELECT Alumno.nombre_alumno , Alumno.apellido_alumno , Alumno.rut_alumno , Matricula.estado_matricula"
+            String sql = "SELECT Alumno.nombre_alumno , Alumno.apellido_alumno , Alumno.rut_alumno , Detalle_Curso.aula "
                     + " FROM Alumno "
-                    + " JOIN Matricula "
-                    + " ON Alumno.rut_alumno = Matricula.rut_alumno"
+//                    + " JOIN Matricula "
+//                    + " ON Alumno.rut_alumno = Matricula.rut_alumno"
                     + " JOIN Detalle_Curso "
                     + " ON Alumno.rut_alumno = Detalle_Curso.rut_alumno"
                     + " WHERE Detalle_Curso.grado = '" + grado +"'";
@@ -49,7 +49,7 @@ public class Consulta_VerAlumn extends Conexion {
                 datos[0] = resultado.getString("nombre_alumno");
                 datos[1] = resultado.getString("apellido_alumno");
                 datos[2] = resultado.getString("rut_alumno");
-                datos[3] = resultado.getString("estado_matricula");
+                datos[3] = resultado.getString("aula");
                
 
                 modelo.addRow(datos);

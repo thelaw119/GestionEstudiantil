@@ -9,7 +9,8 @@ import com.sun.istack.internal.logging.Logger;
 import java.sql.ResultSet;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import vista.Panel_IngresoNotas;
+//import javaapplication6.Panel_IngresoNotas;
+import vista.Panel_Profesor;
 import objeto.Alumno;
 
 /**

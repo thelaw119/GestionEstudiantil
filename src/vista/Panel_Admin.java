@@ -46,6 +46,9 @@ Ctrl_Buscar_Docente ctr_docente;
        
     }
     
+    
+    
+    
     public void hora () {     
         
     Calendar calendario = new GregorianCalendar();
@@ -91,6 +94,8 @@ Ctrl_Buscar_Docente ctr_docente;
         btnmodificar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         panel_alumnos = new javax.swing.JPanel();
         txtbuscaralumno = new javax.swing.JTextField();
         btnbuscaralumno = new javax.swing.JButton();
@@ -146,7 +151,7 @@ Ctrl_Buscar_Docente ctr_docente;
                 .addGroup(panel_inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblfecha)
                     .addComponent(jLabel4))
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(501, Short.MAX_VALUE))
         );
 
         tabbedPaneAdministrador.addTab("Inicio", panel_inicio);
@@ -182,6 +187,19 @@ Ctrl_Buscar_Docente ctr_docente;
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton2.setText("Eliminar");
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
         javax.swing.GroupLayout panel_docentesLayout = new javax.swing.GroupLayout(panel_docentes);
         panel_docentes.setLayout(panel_docentesLayout);
         panel_docentesLayout.setHorizontalGroup(
@@ -189,6 +207,7 @@ Ctrl_Buscar_Docente ctr_docente;
             .addGroup(panel_docentesLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addGroup(panel_docentesLayout.createSequentialGroup()
                         .addComponent(btnDocenteNuevo)
@@ -211,7 +230,9 @@ Ctrl_Buscar_Docente ctr_docente;
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscardocente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 253, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDocenteNuevo)
                     .addComponent(btnmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,7 +283,7 @@ Ctrl_Buscar_Docente ctr_docente;
                 .addGroup(panel_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtbuscaralumno, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscaralumno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 478, Short.MAX_VALUE)
                 .addComponent(btnAlumnoNuevo)
                 .addGap(96, 96, 96))
         );
@@ -297,7 +318,7 @@ Ctrl_Buscar_Docente ctr_docente;
                 .addGroup(panel_matriculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnestadomatricula))
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addContainerGap(526, Short.MAX_VALUE))
         );
 
         tabbedPaneAdministrador.addTab("Matricula", panel_matricula);
@@ -337,7 +358,7 @@ Ctrl_Buscar_Docente ctr_docente;
                     .addComponent(jLabel5))
                 .addGap(50, 50, 50)
                 .addComponent(btnguardarespecialidad)
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
 
         tabbedPaneAdministrador.addTab("Especialidades", panel_especialidades);
@@ -363,7 +384,7 @@ Ctrl_Buscar_Docente ctr_docente;
             .addGroup(panel_ayudaLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
 
         tabbedPaneAdministrador.addTab("Ayuda", panel_ayuda);
@@ -563,6 +584,8 @@ Ctrl_Buscar_Docente ctr_docente;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblfecha;
     private javax.swing.JLabel lblhora;

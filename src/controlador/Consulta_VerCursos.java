@@ -28,22 +28,44 @@ public class Consulta_VerCursos extends Conexion{
 
         Conectar();
         try {
-            String sql = "SELECT Detalle_Curso.aula , Detalle_Curso.grado FROM Detalle_Curso"
+            String sql = "SELECT Detalle_Curso.aula, Detalle_Curso.grado FROM Detalle_Curso"
                        + " JOIN Profesor"
                        + " ON Detalle_Curso.rut_profesor = Profesor.rut_profesor"
                        + " WHERE Profesor.rut_profesor = '"+ rut_profe +"'";
 
             resultado = sentencia.executeQuery(sql);
-                                                                                
+            
+            int contador = 0;
+            
+            
             while (resultado.next()) {
+                
+                contador = contador + 1;
                 datos[0] = resultado.getString("aula");
                 datos[1] = resultado.getString("grado");
                 
                 modelo.addRow(datos);
             }
-            tbtVerCurso.setModel(modelo);
-            sentencia.close();
-            conexion.close();
+            
+            if(contador == 1){
+               
+                JOptionPane.showMessageDialog(null, "Encontrado con exito!");
+                //JOptionPane.showMessageDialog(null, "Bienvenido:" + nombre_admin + "  " + "Rut: " + rut_admin);
+                tbtVerCurso.setModel(modelo);
+                sentencia.close();
+                conexion.close();
+                
+   
+           }else if(contador > 1){
+               //JOptionPane.showMessageDialog(null, "Rut Profesor DUPLICADO!");
+           }else{
+               JOptionPane.showMessageDialog(null, "Rut No se encuentra en la DB");
+           }
+            
+            
+//            tbtVerCurso.setModel(modelo);
+//            sentencia.close();
+//            conexion.close();
 
         } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
