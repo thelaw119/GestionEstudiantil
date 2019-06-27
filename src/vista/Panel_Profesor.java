@@ -22,6 +22,7 @@ import controlador.Consulta_IngresoNota;
 import controlador.Consulta_VerAlumn;
 import controlador.Consulta_VerCursos;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -44,6 +45,9 @@ public class Panel_Profesor extends javax.swing.JFrame {
         mostrar.BuscarAlumno(cbalumno);
         txtrutprofesor.setEnabled(false);
         txtRut_prof.setEnabled(false);
+        setIconImage(new ImageIcon(getClass().getResource(
+                "/imagenes/logo.png")).getImage());
+        
     }
 
     /**
@@ -67,6 +71,7 @@ public class Panel_Profesor extends javax.swing.JFrame {
         rb2medio = new javax.swing.JRadioButton();
         rb3medio = new javax.swing.JRadioButton();
         rb4medio = new javax.swing.JRadioButton();
+        jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -83,10 +88,11 @@ public class Panel_Profesor extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         btncalcular = new javax.swing.JButton();
         txtnotafinal = new javax.swing.JTextField();
-        cbalumno = new javax.swing.JComboBox<Alumno>();
+        cbalumno = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         txtaula = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -94,15 +100,18 @@ public class Panel_Profesor extends javax.swing.JFrame {
         btnVerCurso = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtRut_prof = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
 
         jFormattedTextField1.setText("jFormattedTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setText("Listado de alumnos ");
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel2.setText("Listado de Alumnos ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, -1, 29));
 
         tbtVerAlumn.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -117,89 +126,74 @@ public class Panel_Profesor extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbtVerAlumn);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 526, 187));
+
         btnVerAlumn.setText("VER");
         btnVerAlumn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerAlumnActionPerformed(evt);
             }
         });
+        jPanel1.add(btnVerAlumn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 132, -1));
 
         buttonGroup1.add(rb1medio);
         rb1medio.setText("1 medio");
+        jPanel1.add(rb1medio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
 
         buttonGroup1.add(rb2medio);
         rb2medio.setText("2 medio");
+        jPanel1.add(rb2medio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
 
         buttonGroup1.add(rb3medio);
         rb3medio.setText("3 medio");
+        jPanel1.add(rb3medio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
         buttonGroup1.add(rb4medio);
         rb4medio.setText("4 medio");
+        jPanel1.add(rb4medio, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(btnVerAlumn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rb1medio)
-                            .addComponent(rb2medio)
-                            .addComponent(rb3medio)
-                            .addComponent(rb4medio))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(rb1medio)
-                        .addGap(18, 18, 18)
-                        .addComponent(rb2medio)
-                        .addGap(18, 18, 18)
-                        .addComponent(rb3medio)
-                        .addGap(18, 18, 18)
-                        .addComponent(rb4medio)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVerAlumn)))
-                .addContainerGap(279, Short.MAX_VALUE))
-        );
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_docente.png"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 870, 710));
 
         jtnota.addTab("Listado Alumnos", jPanel1);
 
-        jLabel1.setText("Ingreso de notas");
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setText("Ingreso de Notas");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel3.setText("Rut Profesor:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
+
+        txtrutprofesor.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel2.add(txtrutprofesor, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 154, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel4.setText("Nota1");
 
+        txtn1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel5.setText("Nota2");
 
+        txtn2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel6.setText("Nota3");
 
+        txtn3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel7.setText("Nota4");
 
+        txtn4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+
+        btnIngresar.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btnIngresar.setText("INGRESAR");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,12 +201,15 @@ public class Panel_Profesor extends javax.swing.JFrame {
             }
         });
 
+        btncalcular.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btncalcular.setText("Calcular");
         btncalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncalcularActionPerformed(evt);
             }
         });
+
+        txtnotafinal.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -285,66 +282,33 @@ public class Panel_Profesor extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
+
+        cbalumno.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel2.add(cbalumno, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 199, -1));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel13.setText("Alumno:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, -1, -1));
 
+        txtaula.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel2.add(txtaula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 154, -1));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel8.setText("Aula:");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtrutprofesor)
-                                    .addComponent(jLabel3)
-                                    .addComponent(txtaula, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 334, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(cbalumno, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(152, 152, 152))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(314, 314, 314)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbalumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtrutprofesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtaula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
-        );
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_docente.png"))); // NOI18N
+        jLabel12.setText("jLabel12");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 860, -1));
 
         jtnota.addTab("Ingresar Notas", jPanel2);
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel9.setText("Cursos");
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
         tbtVerCurso.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -359,56 +323,26 @@ public class Panel_Profesor extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tbtVerCurso);
 
+        jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 418, 464));
+
         btnVerCurso.setText("VER");
         btnVerCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerCursoActionPerformed(evt);
             }
         });
+        jPanel4.add(btnVerCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 185, -1));
 
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel10.setText("Ingrese su rut");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(txtRut_prof, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(btnVerCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 455, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(317, 317, 317))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel9)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtRut_prof, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(btnVerCurso)
-                        .addGap(277, 277, 277))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
+        txtRut_prof.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel4.add(txtRut_prof, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 145, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_docente.png"))); // NOI18N
+        jLabel14.setText("jLabel14");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 900, 730));
 
         jtnota.addTab("Cursos", jPanel4);
 
@@ -416,16 +350,13 @@ public class Panel_Profesor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jtnota, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 12, Short.MAX_VALUE)
+                .addComponent(jtnota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jtnota)
-                .addContainerGap())
+            .addComponent(jtnota, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -537,7 +468,10 @@ public class Panel_Profesor extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
