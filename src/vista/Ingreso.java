@@ -5,26 +5,40 @@
  */
 package vista;
 
-import conexion.Conexion;
+//import controlador.Conexion;
+import controlador.Ctrl_login;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import vista.Panel_Admin;
+ 
 /**
  *
  * @author The Law
+ * 
+ * 
  */
-public class Ingreso extends javax.swing.JFrame {
+public class Ingreso extends javax.swing.JFrame{
 
     static Connection conexion = null;
+    String Item = "";
+    
+    Ctrl_login login;
+    
     /**
      * Creates new form Ingreso
      */
     public Ingreso() {
         initComponents();
         setLocationRelativeTo(null);
+        login = new Ctrl_login();
+        login.Conectar();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -51,7 +65,7 @@ public class Ingreso extends javax.swing.JFrame {
 
         jLabel3.setText("Clave:");
 
-        cbtipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbtipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Alumno", "Profesor" }));
 
         jLabel1.setText("Tipo");
 
@@ -118,20 +132,39 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void btningresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btningresarActionPerformed
         
-        Conexion con = new Conexion();
-        con.Conectar();
-        
+
         String rut = txtrut.getText();
         String clave = txtclave.getText();
         
-        System.out.println(rut+clave);
+
+        Item = cbtipo.getSelectedItem().toString();
+        
+        if(Item == "Administrador"){
+                
+                login.LoginAdministrador(rut, clave);
+                
+                dispose();
+             
+        }else if(Item == "Alumno"){
+            
+            login.LoginAlumno(rut, clave);
+            dispose();
+            
+        }else if(Item == "Profesor"){
+           
+            login.LoginProfesor(rut, clave);
+            Panel_Profesor.txtrutprofesor.setText(txtrut.getText());
+            Panel_Profesor.txtRut_prof.setText(txtrut.getText());
+            dispose();
+        }
+        
         
     }//GEN-LAST:event_btningresarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -154,7 +187,7 @@ public class Ingreso extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Ingreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
