@@ -1,9 +1,55 @@
-    
+/* API SISTEMA COLEGIO.
+ *
+ * 
+ *
+ * Codigo Basado en Pedro Gatica , Kimberly Soazo , Joaquin Valenzuela 
+ *
+ * 
+ *
+ * Este programa es software libre; Puedes redistribuirlo y / o modificarlo.
+ * bajo los términos de la Licencia Pública General de GNU tal como fue publicada por
+ * la Fundación de Software Libre; ya sea la versión 2 de la Licencia, o
+ * (a su elección) cualquier versión posterior.
+ *
+ * ------------------------------------------------- ----------------------------
+ * Copyright (c) 2019,Pedro Gatica , Joaquin Valenzuela,Kimberly Soazo
+ * Todos los derechos reservados.
+ *
+ * CONDICIONES DE LA LICENCIA
+ *
+ * La distribución gratuita y el uso de este software tanto en origen como en binario.
+ * Se permite el formulario (con o sin cambios) siempre que:
+ *
+ * 1. Las distribuciones de este código fuente incluyen el copyright anterior.
+ * Aviso, esta lista de condiciones y el siguiente descargo de responsabilidad;
+ *
+ * 2. Las distribuciones en formato binario incluyen el copyright anterior.
+ * Aviso, esta lista de condiciones y el siguiente aviso legal.
+ * en la documentación y / u otros materiales asociados;
+ *
+ * 3. el nombre de los titulares de los derechos de autor no se utiliza para promocionar productos
+ * construido utilizando este software sin permiso escrito específico.
+ *
+ * ALTERNATIVAMENTE, siempre que este aviso se mantenga en su totalidad, este producto
+ * se puede distribuir según los términos de la Licencia Pública General de GNU (GPL),
+ * en cuyo caso, las disposiciones de la GPL se aplican EN LUGAR DE las mencionadas anteriormente.
+ *
+ * DESCARGO DE RESPONSABILIDAD
+ *
+ * Este software se proporciona "tal cual" sin garantías explícitas ni implícitas
+ * con respecto a sus propiedades, incluida, entre otras, la corrección
+ * y / o aptitud para el propósito.
+ * ------------------------------------------------- ----------------------------
+ * /
+
+*/
+
 package vista;
 
 import controlador.Ctrl_ElminarAlumno;
 import controlador.Ctrl_Ingresar_Alumno;
 import controlador.Ctrl_Modificar_Alumno;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 //import vista.Panel_Admin;
 
@@ -20,6 +66,8 @@ public class Ingresar_Alum extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        setIconImage(new ImageIcon(getClass().getResource(
+                "/imagenes/logo.png")).getImage());
     }
 
     /**
@@ -37,7 +85,7 @@ public class Ingresar_Alum extends javax.swing.JFrame {
         tbtModAlumn = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        jMenu1 = new javax.swing.JMenu();
+        Seleccionar = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -130,16 +178,17 @@ public class Ingresar_Alum extends javax.swing.JFrame {
 
         jLabel11.setText("jLabel11");
 
-        jMenu1.setText("Modificar");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        Seleccionar.setText("Seleccionar");
+        Seleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
+                SeleccionarActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(jMenu1);
+        jPopupMenu1.add(Seleccionar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel3.setBackground(new java.awt.Color(0, 204, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -405,6 +454,8 @@ public class Ingresar_Alum extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Ingreso Alumno", jPanel3);
+
+        jPanel2.setBackground(new java.awt.Color(0, 204, 255));
 
         rut1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         rut1.setText("Rut:");
@@ -721,7 +772,7 @@ public class Ingresar_Alum extends javax.swing.JFrame {
         ver.DatosAlumn(tbtModificarAlumn);
     }//GEN-LAST:event_btnVerAlumnActionPerformed
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    private void SeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeleccionarActionPerformed
         int fila = tbtModificarAlumn.getSelectedRow();
         if (fila>=0) {
             txtMrut.setText(tbtModificarAlumn.getValueAt(fila, 0).toString());
@@ -736,8 +787,10 @@ public class Ingresar_Alum extends javax.swing.JFrame {
             txtMestM.setText(tbtModificarAlumn.getValueAt(fila, 9).toString());
             txtMfecM.setText(tbtModificarAlumn.getValueAt(fila, 10).toString());
             
+        }else{
+            JOptionPane.showMessageDialog(null, "No selecciono Fila");
         }
-    }//GEN-LAST:event_jMenu1ActionPerformed
+    }//GEN-LAST:event_SeleccionarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         Ctrl_Modificar_Alumno ver = new Ctrl_Modificar_Alumno();
@@ -753,7 +806,7 @@ public class Ingresar_Alum extends javax.swing.JFrame {
         int ModconA = Integer.parseInt(txtMconA.getText());
         String Moddir = txtMdirA.getText();
         String ModestaM = txtMestM.getText();
-        String ModFecM = txtMestM.getText();
+        String ModFecM = txtMfecM.getText();
         
         ver.ModificarAlumn(Modrut, Modnombre, Modapellido, Modfecnac, Modruta, ModnomA, ModparenA, ModconA, Moddir);
         ver.ModificarMatricula(Modrut, ModestaM, ModFecM);
@@ -803,6 +856,7 @@ public class Ingresar_Alum extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Seleccionar;
     private javax.swing.ButtonGroup Sexo;
     private javax.swing.JButton btnBorrarAlumno;
     private javax.swing.JButton btnModificar;
@@ -829,7 +883,6 @@ public class Ingresar_Alum extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -1,3 +1,48 @@
+/* API SISTEMA COLEGIO.
+ *
+ * 
+ *
+ * Codigo Basado en Pedro Gatica , Kimberly Soazo , Joaquin Valenzuela 
+ *
+ * 
+ *
+ * Este programa es software libre; Puedes redistribuirlo y / o modificarlo.
+ * bajo los términos de la Licencia Pública General de GNU tal como fue publicada por
+ * la Fundación de Software Libre; ya sea la versión 2 de la Licencia, o
+ * (a su elección) cualquier versión posterior.
+ *
+ * ------------------------------------------------- ----------------------------
+ * Copyright (c) 2019,Pedro Gatica , Joaquin Valenzuela,Kimberly Soazo
+ * Todos los derechos reservados.
+ *
+ * CONDICIONES DE LA LICENCIA
+ *
+ * La distribución gratuita y el uso de este software tanto en origen como en binario.
+ * Se permite el formulario (con o sin cambios) siempre que:
+ *
+ * 1. Las distribuciones de este código fuente incluyen el copyright anterior.
+ * Aviso, esta lista de condiciones y el siguiente descargo de responsabilidad;
+ *
+ * 2. Las distribuciones en formato binario incluyen el copyright anterior.
+ * Aviso, esta lista de condiciones y el siguiente aviso legal.
+ * en la documentación y / u otros materiales asociados;
+ *
+ * 3. el nombre de los titulares de los derechos de autor no se utiliza para promocionar productos
+ * construido utilizando este software sin permiso escrito específico.
+ *
+ * ALTERNATIVAMENTE, siempre que este aviso se mantenga en su totalidad, este producto
+ * se puede distribuir según los términos de la Licencia Pública General de GNU (GPL),
+ * en cuyo caso, las disposiciones de la GPL se aplican EN LUGAR DE las mencionadas anteriormente.
+ *
+ * DESCARGO DE RESPONSABILIDAD
+ *
+ * Este software se proporciona "tal cual" sin garantías explícitas ni implícitas
+ * con respecto a sus propiedades, incluida, entre otras, la corrección
+ * y / o aptitud para el propósito.
+ * ------------------------------------------------- ----------------------------
+ * /
+
+*/
 
 package vista;
 
@@ -43,16 +88,50 @@ public class Ingreso extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btningresar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtrut = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         txtclave = new javax.swing.JPasswordField();
-        cbtipo = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
+        cbtipo = new javax.swing.JComboBox();
+        btningresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 204, 255));
         setIconImage(getIconImage());
+
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setForeground(new java.awt.Color(51, 153, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 360, 350));
+
+        jLabel4.setText("INGRESO");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 70, 40));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel2.setText("Rut:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+
+        txtrut.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel1.add(txtrut, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 133, -1));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel3.setText("Clave:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
+
+        txtclave.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jPanel1.add(txtclave, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 133, -1));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        jLabel1.setText("Tipo");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+
+        cbtipo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        cbtipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Alumno", "Profesor" }));
+        jPanel1.add(cbtipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 133, -1));
 
         btningresar.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         btningresar.setText("Ingresar");
@@ -61,59 +140,23 @@ public class Ingreso extends javax.swing.JFrame{
                 btningresarActionPerformed(evt);
             }
         });
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel2.setText("Rut:");
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel3.setText("Clave:");
-
-        txtrut.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        txtclave.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-
-        cbtipo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        cbtipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Alumno", "Profesor" }));
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jLabel1.setText("Tipo");
+        jPanel1.add(btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 133, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 242, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(txtrut, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtclave, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(cbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(btningresar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 241, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 117, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(8, 8, 8)
-                .addComponent(txtrut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel3)
-                .addGap(6, 6, 6)
-                .addComponent(txtclave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel1)
-                .addGap(25, 25, 25)
-                .addComponent(cbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(btningresar)
-                .addGap(0, 118, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -191,6 +234,9 @@ public class Ingreso extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtclave;
     private javax.swing.JTextField txtrut;
     // End of variables declaration//GEN-END:variables

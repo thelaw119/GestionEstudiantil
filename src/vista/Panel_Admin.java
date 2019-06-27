@@ -1,19 +1,61 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* API SISTEMA COLEGIO.
+ *
+ * 
+ *
+ * Codigo Basado en Pedro Gatica , Kimberly Soazo , Joaquin Valenzuela 
+ *
+ * 
+ *
+ * Este programa es software libre; Puedes redistribuirlo y / o modificarlo.
+ * bajo los términos de la Licencia Pública General de GNU tal como fue publicada por
+ * la Fundación de Software Libre; ya sea la versión 2 de la Licencia, o
+ * (a su elección) cualquier versión posterior.
+ *
+ * ------------------------------------------------- ----------------------------
+ * Copyright (c) 2019,Pedro Gatica , Joaquin Valenzuela,Kimberly Soazo
+ * Todos los derechos reservados.
+ *
+ * CONDICIONES DE LA LICENCIA
+ *
+ * La distribución gratuita y el uso de este software tanto en origen como en binario.
+ * Se permite el formulario (con o sin cambios) siempre que:
+ *
+ * 1. Las distribuciones de este código fuente incluyen el copyright anterior.
+ * Aviso, esta lista de condiciones y el siguiente descargo de responsabilidad;
+ *
+ * 2. Las distribuciones en formato binario incluyen el copyright anterior.
+ * Aviso, esta lista de condiciones y el siguiente aviso legal.
+ * en la documentación y / u otros materiales asociados;
+ *
+ * 3. el nombre de los titulares de los derechos de autor no se utiliza para promocionar productos
+ * construido utilizando este software sin permiso escrito específico.
+ *
+ * ALTERNATIVAMENTE, siempre que este aviso se mantenga en su totalidad, este producto
+ * se puede distribuir según los términos de la Licencia Pública General de GNU (GPL),
+ * en cuyo caso, las disposiciones de la GPL se aplican EN LUGAR DE las mencionadas anteriormente.
+ *
+ * DESCARGO DE RESPONSABILIDAD
+ *
+ * Este software se proporciona "tal cual" sin garantías explícitas ni implícitas
+ * con respecto a sus propiedades, incluida, entre otras, la corrección
+ * y / o aptitud para el propósito.
+ * ------------------------------------------------- ----------------------------
+ * /
+
+*/
+
 package vista;
 import java.util.*;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import vista.ingresar_Docente;
-import vista.Ingresar_Alumno;
+//import vista.Ingresar_Alumno;
 import objeto.Especialidad;
 import controlador.Ctrl_Especialidad;
 import controlador.Ctrl_Buscar_Alumno;
 import controlador.Ctrl_Buscar_Docente;
 import java.awt.HeadlessException;
+import javax.swing.ImageIcon;
 import objeto.Alumno;
 /**
  *
@@ -43,6 +85,8 @@ Ctrl_Buscar_Docente ctr_docente;
         h1.start();
         setLocationRelativeTo(null);
         setVisible(true);
+        setIconImage(new ImageIcon(getClass().getResource(
+                "/imagenes/logo.png")).getImage());
        
     }
     
@@ -100,9 +144,6 @@ Ctrl_Buscar_Docente ctr_docente;
         txtbuscaralumno = new javax.swing.JTextField();
         btnbuscaralumno = new javax.swing.JButton();
         btnAlumnoNuevo = new javax.swing.JButton();
-        panel_matricula = new javax.swing.JPanel();
-        btnestadomatricula = new javax.swing.JButton();
-        txtmatricula = new javax.swing.JTextField();
         panel_especialidades = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtespecialidad = new javax.swing.JTextField();
@@ -112,6 +153,8 @@ Ctrl_Buscar_Docente ctr_docente;
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        panel_inicio.setBackground(new java.awt.Color(0, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("Hora: ");
@@ -155,6 +198,8 @@ Ctrl_Buscar_Docente ctr_docente;
         );
 
         tabbedPaneAdministrador.addTab("Inicio", panel_inicio);
+
+        panel_docentes.setBackground(new java.awt.Color(0, 204, 255));
 
         btnbuscardocente.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnbuscardocente.setText("Buscar Docente");
@@ -242,6 +287,8 @@ Ctrl_Buscar_Docente ctr_docente;
 
         tabbedPaneAdministrador.addTab("Docentes", panel_docentes);
 
+        panel_alumnos.setBackground(new java.awt.Color(0, 204, 255));
+
         txtbuscaralumno.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         btnbuscaralumno.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -265,63 +312,29 @@ Ctrl_Buscar_Docente ctr_docente;
         panel_alumnosLayout.setHorizontalGroup(
             panel_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_alumnosLayout.createSequentialGroup()
-                .addGroup(panel_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel_alumnosLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAlumnoNuevo))
-                    .addGroup(panel_alumnosLayout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(txtbuscaralumno, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
-                        .addComponent(btnbuscaralumno)))
+                .addGap(68, 68, 68)
+                .addComponent(txtbuscaralumno, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panel_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnbuscaralumno)
+                    .addComponent(btnAlumnoNuevo))
                 .addGap(98, 98, 98))
         );
         panel_alumnosLayout.setVerticalGroup(
             panel_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_alumnosLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addGroup(panel_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtbuscaralumno, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121)
+                .addGroup(panel_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtbuscaralumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscaralumno))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 478, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 477, Short.MAX_VALUE)
                 .addComponent(btnAlumnoNuevo)
                 .addGap(96, 96, 96))
         );
 
         tabbedPaneAdministrador.addTab("Alumnos", panel_alumnos);
 
-        btnestadomatricula.setText("Ver estado de Matricula");
-        btnestadomatricula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnestadomatriculaActionPerformed(evt);
-            }
-        });
-
-        txtmatricula.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtmatricula.setText("jTextField3");
-
-        javax.swing.GroupLayout panel_matriculaLayout = new javax.swing.GroupLayout(panel_matricula);
-        panel_matricula.setLayout(panel_matriculaLayout);
-        panel_matriculaLayout.setHorizontalGroup(
-            panel_matriculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_matriculaLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(txtmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(btnestadomatricula)
-                .addGap(92, 92, 92))
-        );
-        panel_matriculaLayout.setVerticalGroup(
-            panel_matriculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_matriculaLayout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addGroup(panel_matriculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnestadomatricula))
-                .addContainerGap(526, Short.MAX_VALUE))
-        );
-
-        tabbedPaneAdministrador.addTab("Matricula", panel_matricula);
+        panel_especialidades.setBackground(new java.awt.Color(0, 204, 255));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel5.setText("Especialidad:");
@@ -363,11 +376,13 @@ Ctrl_Buscar_Docente ctr_docente;
 
         tabbedPaneAdministrador.addTab("Especialidades", panel_especialidades);
 
+        panel_ayuda.setBackground(new java.awt.Color(0, 204, 255));
+
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Bienvenidos a SYSTUDENT \n\nsistema de colegio con exclusividad en educación de\nenseñanza media.\n\ncontiene modulos para cada uno de los usuarios,\ncon sus actividades especificas que necesita \ncada uno de estos.");
+        jTextArea1.setText("Bienvenidos a GS GESTION ESTUDIANTIL \n\nsistema de colegio con exclusividad en educación de\nenseñanza media.\n\ncontiene modulos para cada uno de los usuarios,\ncon sus actividades especificas que necesita \ncada uno de estos.\n\nMODO BETA!.");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout panel_ayudaLayout = new javax.swing.GroupLayout(panel_ayuda);
@@ -404,52 +419,29 @@ Ctrl_Buscar_Docente ctr_docente;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnguardarespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarespecialidadActionPerformed
-        try{
-            //if(txtespecialidad.getText() != ""){
+        
+        String nombre_especialidad = txtespecialidad.getText();
+        Ctrl_Especialidad guardar = new Ctrl_Especialidad();
+        
+             if(nombre_especialidad != ""){
 
-                //JOptionPane.showMessageDialog(null, "Campo Vacio");
+                JOptionPane.showMessageDialog(null, "Campo Vacio");
 
-                //}else{
+                }else{
 
-                String nombre_especialidad = txtespecialidad.getText();
+                
 
-                //Especialidad especialidad = new Especialidad(
-                    //txtespecialidad.getText());
-                //ctr_especialidad.Guardar_Datos(especialidad);
-
-                JOptionPane.showMessageDialog(null,"guardado");
-                //        controlador.Ctrl_Especialidad(Ctrl_Especialidad)
-                limpiarEspecialidad();
-                //}
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e.getMessage());
+               guardar.IngresarEspecialidad(nombre_especialidad);
+               
+       
         }
-
     }//GEN-LAST:event_btnguardarespecialidadActionPerformed
-
-    private void btnestadomatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnestadomatriculaActionPerformed
-
-        //        String numero_matricula = txtmatricula.getText();
-        //        Matricula matricula = new Matricula(
-            //        txtmatricula.getText());
-        ////        ctr_especialidad.Guardar_Datos(especialidad);
-
-        //         JOptionPane.showMessageDialog(null,"guardado");
-     
-        limpiarMatricula();
-
-        //     }catch(Exception e){
-        //         JOptionPane.showMessageDialog(null, e.getMessage());
-        //     }
-
-    }//GEN-LAST:event_btnestadomatriculaActionPerformed
 
     private void btnAlumnoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlumnoNuevoActionPerformed
         dispose();
         Ingresar_Alum mostrar = new Ingresar_Alum();
         mostrar.setLocationRelativeTo(null);
         mostrar.setVisible(true);
-
     }//GEN-LAST:event_btnAlumnoNuevoActionPerformed
 
     private void btnbuscaralumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscaralumnoActionPerformed
@@ -472,7 +464,6 @@ Ctrl_Buscar_Docente ctr_docente;
         ingresar_Docente mostrar = new ingresar_Docente();
         mostrar.setLocationRelativeTo(null);
         mostrar.setVisible(true);
-
     }//GEN-LAST:event_btnmodificarActionPerformed
 
     private void btnDocenteNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteNuevoActionPerformed
@@ -480,7 +471,6 @@ Ctrl_Buscar_Docente ctr_docente;
         ingresar_Docente mostrar = new ingresar_Docente();
         mostrar.setLocationRelativeTo(null);
         mostrar.setVisible(true);
-
     }//GEN-LAST:event_btnDocenteNuevoActionPerformed
 
     private void btnbuscardocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscardocenteActionPerformed
@@ -501,7 +491,6 @@ Ctrl_Buscar_Docente ctr_docente;
             //            JOptionPane.showMessageDialog(null,i.getMessage());
             //        }
         txtbuscaDocente.setText(null);
-
     }//GEN-LAST:event_btnbuscardocenteActionPerformed
 
     
@@ -510,10 +499,10 @@ Ctrl_Buscar_Docente ctr_docente;
         txtespecialidad.setText(null);
     }
     
-     public void limpiarMatricula(){
-        
-        txtmatricula.setText(null);
-    }
+//     public void limpiarMatricula(){
+//        
+//        txtmatricula.setText(null);
+//    }
     /**
      * @param args the command line arguments
      */
@@ -574,7 +563,6 @@ Ctrl_Buscar_Docente ctr_docente;
     private javax.swing.JButton btnDocenteNuevo;
     private javax.swing.JButton btnbuscaralumno;
     private javax.swing.JButton btnbuscardocente;
-    private javax.swing.JButton btnestadomatricula;
     private javax.swing.JButton btnguardarespecialidad;
     private javax.swing.JButton btnmodificar;
     private javax.swing.ButtonGroup cursoss;
@@ -594,11 +582,9 @@ Ctrl_Buscar_Docente ctr_docente;
     private javax.swing.JPanel panel_docentes;
     private javax.swing.JPanel panel_especialidades;
     private javax.swing.JPanel panel_inicio;
-    private javax.swing.JPanel panel_matricula;
     private javax.swing.JTabbedPane tabbedPaneAdministrador;
     private javax.swing.JTextField txtbuscaDocente;
     private javax.swing.JTextField txtbuscaralumno;
     private javax.swing.JTextField txtespecialidad;
-    private javax.swing.JTextField txtmatricula;
     // End of variables declaration//GEN-END:variables
 }
