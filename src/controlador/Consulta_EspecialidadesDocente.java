@@ -6,7 +6,7 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import vista.ingresar_Docente;
 import objeto.Especialidad;
-
+      
 /**
  *
  * @author Darlyn

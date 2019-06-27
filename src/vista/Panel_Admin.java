@@ -435,7 +435,7 @@ Ctrl_Buscar_Docente ctr_docente;
         ////        ctr_especialidad.Guardar_Datos(especialidad);
 
         //         JOptionPane.showMessageDialog(null,"guardado");
-
+     
         limpiarMatricula();
 
         //     }catch(Exception e){
@@ -446,7 +446,7 @@ Ctrl_Buscar_Docente ctr_docente;
 
     private void btnAlumnoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlumnoNuevoActionPerformed
         dispose();
-        Ingresar_Alumno mostrar = new Ingresar_Alumno();
+        Ingresar_Alum mostrar = new Ingresar_Alum();
         mostrar.setLocationRelativeTo(null);
         mostrar.setVisible(true);
 

@@ -1,5 +1,5 @@
 package controlador;
-
+     
 import objeto.Especialidad;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;

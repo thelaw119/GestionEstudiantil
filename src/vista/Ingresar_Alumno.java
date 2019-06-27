@@ -1,4 +1,4 @@
-
+   
 package vista;
 
 import controlador.Ctrl_ElminarAlumno;
@@ -158,6 +158,11 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         });
 
         btnModificarAlumno.setText("Modificar");
+        btnModificarAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarAlumnoActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -400,6 +405,13 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         ver.EliminarAlumno(rutAlumno);
         ver.EliminarMatricula(rutAlumno);
     }//GEN-LAST:event_btnBorrarAlumnoActionPerformed
+
+    private void btnModificarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarAlumnoActionPerformed
+        
+        
+        
+        
+    }//GEN-LAST:event_btnModificarAlumnoActionPerformed
 
     /**
      * @param args the command line arguments
