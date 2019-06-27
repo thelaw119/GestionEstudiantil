@@ -68,6 +68,7 @@ Thread h1;
 Ctrl_Especialidad ctr_especialidad;
 Ctrl_Buscar_Alumno ctr_alumno;
 Ctrl_Buscar_Docente ctr_docente;
+
     /**
      * Creates new form Panel_Admin
      */
@@ -135,11 +136,7 @@ Ctrl_Buscar_Docente ctr_docente;
         btnbuscardocente = new javax.swing.JButton();
         txtbuscaDocente = new javax.swing.JTextField();
         btnDocenteNuevo = new javax.swing.JButton();
-        btnmodificar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         panel_alumnos = new javax.swing.JPanel();
         txtbuscaralumno = new javax.swing.JTextField();
         btnbuscaralumno = new javax.swing.JButton();
@@ -219,31 +216,7 @@ Ctrl_Buscar_Docente ctr_docente;
             }
         });
 
-        btnmodificar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnmodificar.setText("Modificar Docente");
-        btnmodificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmodificarActionPerformed(evt);
-            }
-        });
-
         jLabel6.setText("Rut Docente:");
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setText("Eliminar");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout panel_docentesLayout = new javax.swing.GroupLayout(panel_docentes);
         panel_docentes.setLayout(panel_docentesLayout);
@@ -252,19 +225,15 @@ Ctrl_Buscar_Docente ctr_docente;
             .addGroup(panel_docentesLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addGroup(panel_docentesLayout.createSequentialGroup()
-                        .addComponent(btnDocenteNuevo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_docentesLayout.createSequentialGroup()
                         .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90)
-                        .addComponent(btnbuscardocente)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addComponent(btnbuscardocente))
+                    .addGroup(panel_docentesLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(btnDocenteNuevo)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         panel_docentesLayout.setVerticalGroup(
             panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,14 +244,9 @@ Ctrl_Buscar_Docente ctr_docente;
                 .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtbuscaDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnbuscardocente))
-                .addGap(54, 54, 54)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
-                .addGroup(panel_docentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDocenteNuevo)
-                    .addComponent(btnmodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65))
+                .addGap(157, 157, 157)
+                .addComponent(btnDocenteNuevo)
+                .addContainerGap(416, Short.MAX_VALUE))
         );
 
         tabbedPaneAdministrador.addTab("Docentes", panel_docentes);
@@ -458,14 +422,6 @@ Ctrl_Buscar_Docente ctr_docente;
         txtbuscaralumno.setText(null);
     }//GEN-LAST:event_btnbuscaralumnoActionPerformed
 
-    private void btnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodificarActionPerformed
-
-        dispose();
-        ingresar_Docente mostrar = new ingresar_Docente();
-        mostrar.setLocationRelativeTo(null);
-        mostrar.setVisible(true);
-    }//GEN-LAST:event_btnmodificarActionPerformed
-
     private void btnDocenteNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteNuevoActionPerformed
         dispose();
         ingresar_Docente mostrar = new ingresar_Docente();
@@ -564,16 +520,12 @@ Ctrl_Buscar_Docente ctr_docente;
     private javax.swing.JButton btnbuscaralumno;
     private javax.swing.JButton btnbuscardocente;
     private javax.swing.JButton btnguardarespecialidad;
-    private javax.swing.JButton btnmodificar;
     private javax.swing.ButtonGroup cursoss;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblfecha;
     private javax.swing.JLabel lblhora;
