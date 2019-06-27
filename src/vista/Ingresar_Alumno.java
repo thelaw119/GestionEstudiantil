@@ -52,7 +52,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         contacto = new javax.swing.JLabel();
         txtcontacto = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtrutapo = new javax.swing.JTextField();
         lblapellido = new javax.swing.JLabel();
         txtapellido = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -60,10 +60,8 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         btnBorrarAlumno = new javax.swing.JButton();
         btnModificarAlumno = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtNmatricula = new javax.swing.JTextField();
         txtEstadoMatricula = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtFechaMatricula = new javax.swing.JTextField();
@@ -142,7 +140,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel2.setText("Dirección:");
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        txtrutapo.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         lblapellido.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         lblapellido.setText("Apellido:");
@@ -163,17 +161,9 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel5.setText("Nº Matricula");
-
         jLabel6.setText("Estado de Matricula");
 
         jLabel4.setText("Datos de la matricula :");
-
-        txtNmatricula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNmatriculaActionPerformed(evt);
-            }
-        });
 
         jLabel7.setText("Fecha Matricula");
 
@@ -189,12 +179,10 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel5)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtEstadoMatricula)
-                    .addComponent(txtNmatricula)
                     .addComponent(txtFechaMatricula, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
                 .addGap(43, 43, 43))
         );
@@ -203,11 +191,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtNmatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(81, 81, 81)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtEstadoMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,7 +237,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
                                 .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtnombreapoderado, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtrutapo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtparentesco, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtcontacto, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -325,7 +309,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ruta)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtrutapo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtnombreapoderado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -374,7 +358,7 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         txtcontacto.setText(null);
         txtapellido.setText(null);
         txtclave.setText(null);
-        txtNmatricula.setText(null);
+        //txtNmatricula.setText(null);
         txtEstadoMatricula.setText(null);
         txtFechaMatricula.setText(null);
         
@@ -390,21 +374,22 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         String fechanacimiento = txtfechanacimiento.getText();
         String clave = txtclave.getText();
         
-        String rutapoderado = txtDireccion.getText();
+        String rutapoderado = txtrutapo.getText();
         String nombreapoderado = txtnombreapoderado.getText();
         String parentesco = txtparentesco.getText();
         int contacto = Integer.parseInt(txtcontacto.getText());
         String direccion = txtDireccion.getText();
 
         //Matricula
-        int numMatricula = Integer.parseInt(txtNmatricula.getText());
+        //int numMatricula = Integer.parseInt(txtNmatricula.getText());
         String estadoMatricula = txtEstadoMatricula.getText();
         String fecha = txtFechaMatricula.getText();
         
         ver.IngresarAlumno(rutalumno, nombrealumno, apellidoalumno, fechanacimiento,
                 clave, rutapoderado, nombreapoderado, parentesco, contacto, direccion);
         
-        ver.IngresarMatricula(numMatricula, estadoMatricula, fecha, rutalumno);
+        //ver.IngresarMatricula(numMatricula, estadoMatricula, fecha, rutalumno);
+        ver.IngresarMatricula(estadoMatricula, fecha, rutalumno);
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void btnBorrarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarAlumnoActionPerformed
@@ -415,10 +400,6 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
         ver.EliminarAlumno(rutAlumno);
         ver.EliminarMatricula(rutAlumno);
     }//GEN-LAST:event_btnBorrarAlumnoActionPerformed
-
-    private void txtNmatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNmatriculaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNmatriculaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,11 +454,9 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblapellido;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel nombrea;
@@ -487,7 +466,6 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEstadoMatricula;
     private javax.swing.JTextField txtFechaMatricula;
-    private javax.swing.JTextField txtNmatricula;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JPasswordField txtclave;
     private javax.swing.JTextField txtcontacto;
@@ -496,5 +474,6 @@ public class Ingresar_Alumno extends javax.swing.JFrame {
     private javax.swing.JTextField txtnombreapoderado;
     private javax.swing.JTextField txtparentesco;
     private javax.swing.JTextField txtrutalumno;
+    private javax.swing.JTextField txtrutapo;
     // End of variables declaration//GEN-END:variables
 }

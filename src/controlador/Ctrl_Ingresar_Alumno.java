@@ -43,12 +43,12 @@ public class Ctrl_Ingresar_Alumno extends Conexion {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-    public void IngresarMatricula(int numMatricula,String estadoMatricula,String fecha
+    public void IngresarMatricula(String estadoMatricula,String fecha
     ,String rutalumno){
         Conectar();
         try{
-            String sql = "INSERT INTO Matricula(id_matricula,estado_matricula,rut_alumno,fecha_matricula)values"
-                    + "('"+numMatricula+"','"+estadoMatricula+"','"+fecha+"','"+rutalumno+"')";
+            String sql = "INSERT INTO Matricula(estado_matricula,rut_alumno,fecha_matricula)values"
+                    + "('"+estadoMatricula+"','"+rutalumno+"','"+fecha+"')";
             
             sentencia.executeUpdate(sql);
         }catch(Exception e){

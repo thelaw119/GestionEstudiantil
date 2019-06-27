@@ -62,7 +62,7 @@
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtnombreapoderado" min="-2" pref="192" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="192" max="-2" attributes="0"/>
+                                  <Component id="txtrutapo" min="-2" pref="192" max="-2" attributes="0"/>
                                   <Component id="txtparentesco" alignment="1" min="-2" pref="192" max="-2" attributes="0"/>
                                   <Component id="txtcontacto" alignment="1" min="-2" pref="192" max="-2" attributes="0"/>
                                   <Component id="txtDireccion" min="-2" pref="192" max="-2" attributes="0"/>
@@ -158,7 +158,7 @@
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ruta" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtrutapo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -368,7 +368,7 @@
         <Property name="text" type="java.lang.String" value="Direcci&#xf3;n:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txtrutapo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="12" style="0"/>
@@ -434,13 +434,11 @@
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="txtEstadoMatricula" max="32767" attributes="0"/>
-                      <Component id="txtNmatricula" max="32767" attributes="0"/>
                       <Component id="txtFechaMatricula" pref="109" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
@@ -452,12 +450,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtNmatricula" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtEstadoMatricula" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -473,11 +466,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="N&#xba; Matricula"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estado de Matricula"/>
@@ -487,11 +475,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Datos de la matricula :"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtNmatricula">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNmatriculaActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtEstadoMatricula">
         </Component>
