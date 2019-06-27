@@ -151,7 +151,7 @@ public class Ingreso extends javax.swing.JFrame{
             dispose();
         }
         
-        
+            
     }//GEN-LAST:event_btningresarActionPerformed
 
     /**

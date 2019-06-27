@@ -455,7 +455,7 @@ public class Panel_Profesor extends javax.swing.JFrame {
 
     private void btnVerAlumnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerAlumnActionPerformed
         Consulta_VerAlumn ver = new Consulta_VerAlumn();
-
+   
         String grado = "";
         if (rb1medio.isSelected()) {
             grado = "1 Medio";
