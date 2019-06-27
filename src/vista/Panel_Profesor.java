@@ -13,7 +13,7 @@ package vista;
 //import javax.swing.JOptionPane;
 //import objeto.Alumno;
 
-
+ 
 import controlador.Consulta_Alumno;
 import static java.lang.String.valueOf;
 import javax.swing.JOptionPane;
