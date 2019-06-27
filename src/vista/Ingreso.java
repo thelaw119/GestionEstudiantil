@@ -20,7 +20,7 @@ import vista.Panel_Admin;
 /**
  *
  * @author The Law
- * 
+ * @modificacion 
  * 
  */
 public class Ingreso extends javax.swing.JFrame{
